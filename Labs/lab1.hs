@@ -39,3 +39,15 @@ verifyDouble :: Integer -> Integer -> Bool
 verifyDouble a b = a > double 
     where double = 2 * b
 
+-- Rock-Paper-Scissors game 
+data Alegere = Piatra | Foarfeca | Hartie deriving (Eq, Show)
+data Rezultat = Victorie | Infrangere | Egalitate deriving (Eq, Show)
+
+partida :: Alegere -> Alegere -> Rezultat 
+partida Piatra Foarfeca = Victorie 
+partida Foarfeca Hartie = Victorie 
+partida Hartie Piatra = Victorie 
+partida alegere1 alegere2 
+    | alegere1 == alegere2 = Egalitate 
+    | otherwise = Infrangere
+
